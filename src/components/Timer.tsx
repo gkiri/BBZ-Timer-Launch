@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Counter = ({ mintDate }) => {
+const Counter = ({ mintDate }: { mintDate: string }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(mintDate) - +new Date();
     let timeLeft = {};
@@ -27,7 +27,7 @@ const Counter = ({ mintDate }) => {
     return () => clearTimeout(timer);
   }, [mintDate]); // Add mintDate as a dependency for the useEffect hook
 
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : time;
   };
 
