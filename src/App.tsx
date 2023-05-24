@@ -31,7 +31,7 @@ export default function Home() {
   const contractQuery = useContract(contractAddress);
   const contractMetadata = useContractMetadata(contractQuery.contract);
 
-  const mintDate = "2023-05-28T18:00:00";
+  const mintDate = "2023-05-28T21:00:00";
 
   const address = useAddress();
   const [quantity, setQuantity] = useState(1);
