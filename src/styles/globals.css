@@ -96,7 +96,7 @@ img {
 /* Additional Styles */
 @media (min-width: 768px) {
   img {
-    max-width: 50%; /* Adjust the value to your desired size */
+    max-width: 70%; /* Adjust the value to your desired size */
   }
 }
 
