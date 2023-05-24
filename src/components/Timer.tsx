@@ -9,7 +9,7 @@ const Counter = ({ mintDate }) => {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
@@ -25,21 +25,22 @@ const Counter = ({ mintDate }) => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  });
+  }, [mintDate]); // Add mintDate as a dependency for the useEffect hook
 
   const formatTime = (time) => {
     return time < 10 ? `0${time}` : time;
   };
 
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
+  const timerComponents = Object.keys(timeLeft).map((interval) => {
     if (!timeLeft[interval]) {
-      return;
+      return null;
     }
 
-    timerComponents.push(
-      <span key={interval} className="font-bold text-4xl text-blue-800 custom-container">
+    return (
+      <span
+        key={interval}
+        className="font-bold text-4xl text-blue-800 custom-container"
+      >
         {formatTime(timeLeft[interval])} {interval}{" "}
       </span>
     );
