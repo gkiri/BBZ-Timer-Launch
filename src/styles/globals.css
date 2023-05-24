@@ -87,11 +87,19 @@
     color: #007bff;
   }
   
-  /* Responsive Image */
+/* Responsive Image */
 img {
   max-width: 100%;
   height: auto;
 }
+
+/* Additional Styles */
+@media (min-width: 768px) {
+  img {
+    max-width: 50%; /* Adjust the value to your desired size */
+  }
+}
+
 
 /* Responsive Timer Box */
 @media (max-width: 768px) {
