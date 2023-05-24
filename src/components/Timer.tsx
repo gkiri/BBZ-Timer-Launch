@@ -25,7 +25,7 @@ const Counter = ({ mintDate }: { mintDate: string }) => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [mintDate]); // Add mintDate as a dependency for the useEffect hook
+  }); // Add mintDate as a dependency for the useEffect hook
 
   const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : time;
