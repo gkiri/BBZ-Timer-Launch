@@ -31,8 +31,8 @@ const Counter = ({ mintDate }: { mintDate: string }) => {
     return time < 10 ? `0${time}` : time;
   };
 
-  const timerComponents = Object.keys(timeLeft).map((interval) => {
-    if (!timeLeft[interval]) {
+  const timerComponents = Object.keys(timeLeft).map((interval: string) => {
+    if (!timeLeft[interval as keyof typeof timeLeft]) {
       return null;
     }
 
@@ -41,7 +41,7 @@ const Counter = ({ mintDate }: { mintDate: string }) => {
         key={interval}
         className="font-bold text-4xl text-blue-800 custom-container"
       >
-        {formatTime(timeLeft[interval])} {interval}{" "}
+        {formatTime(timeLeft[interval as keyof typeof timeLeft])} {interval}{" "}
       </span>
     );
   });
