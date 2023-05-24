@@ -287,7 +287,7 @@ export default function Home() {
     <div className="h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col items-center py-4 mb-10">{/* Add margin-bottom (mb-10) here */}
         <div className="flex flex-col items-center mt-2">
-          <img src={BADBOYZ} alt="BadBoyz" className="w-1/2 h-auto mb-2" />
+          <img src={BADBOYZ} alt="BadBoyz" style={{ maxWidth: '100%', height: 'auto' }} />
         </div>
 
         <div className="countdown-timer">
